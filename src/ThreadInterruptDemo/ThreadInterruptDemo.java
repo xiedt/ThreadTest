@@ -2,7 +2,7 @@ package ThreadInterruptDemo;
 
 class MyThread implements Runnable{ // 实现Runnable接口
     public void run(){  // 覆写run()方法
-        System.out.println("1、进入run()方法") ;
+        System.out.println("1、进入run()方法1111111111") ;
         try{
             Thread.sleep(10000) ;   // 线程休眠10秒
             System.out.println("2、已经完成了休眠") ;
