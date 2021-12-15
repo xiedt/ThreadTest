@@ -5,18 +5,27 @@ package createType002;
  * 可以多个线程共享同一个目标对象，所以非常适合多个相同线程来处理同一份资源的情况。
  */
 public class ThreadCreate02 {
+
+
     public static void main(String[] args) {
-        Runnable runnable = new MyThread02();
-        Thread thread = new Thread(runnable);
-        thread.start();
+        MyThread02 th1 = new MyThread02("线程1");
+        MyThread02 th2 = new MyThread02("线程2");
+        Thread thread1 = new Thread(th1);
+        Thread thread2 = new Thread(th2);
+        thread1.start();
+        thread2.start();
         System.out.println("执行主线程");
     }
 }
 class MyThread02 implements Runnable{
-
+    private String name;
+         public MyThread02(String name){
+         this.name = name ;      // 通过构造方法配置name属性
+            }
     @Override
     public void run() {
-        System.out.println("执行子线程");
+        for(int i=0;i<10;i++)
+        System.out.println(name+"执行子线程");
     }
 }
 /**
