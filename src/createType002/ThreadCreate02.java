@@ -18,10 +18,11 @@ public class ThreadCreate02 {
     }
 }
 class MyThread02 implements Runnable{
-    private String name;
-         public MyThread02(String name){
-         this.name = name ;      // 通过构造方法配置name属性
-            }
+     private String name;
+
+     public MyThread02(String name){
+     this.name = name ;      // 通过构造方法配置name属性
+        }
     @Override
     public void run() {
         for(int i=0;i<10;i++)
